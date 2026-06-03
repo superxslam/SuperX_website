@@ -119,6 +119,14 @@
       const pClass = platformClass(r.platform);
       const tds = columns.map((col) => {
         if (col === 'platform') return `<td><span class="imu-platform-badge imu-p-${pClass}">${fmtValue(col, r[col])}</span></td>`;
+        if (col === 'traj_id') {
+          const q = new URLSearchParams({
+            platform: String(r.platform ?? ''),
+            split: String(r.split ?? ''),
+            traj_id: String(r.traj_id ?? '')
+          });
+          return `<td style="background:${rowTint[pClass] || '#fff'}"><a href="/imuchallenge/data/preview/?${q.toString()}">${fmtValue(col, r[col])}</a></td>`;
+        }
         return `<td style="background:${rowTint[pClass] || '#fff'}">${fmtValue(col, r[col])}</td>`;
       }).join('');
       return `<tr class="imu-row-${pClass}">${tds}</tr>`;
