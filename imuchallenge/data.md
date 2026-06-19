@@ -54,6 +54,8 @@ Splits are deduplicated at the trajectory level (SHA-256 of raw IMU content); tr
 
 ## Data Explorer
 
+All trajectories are sampled at **200 Hz**. Each 1-second window contains exactly 200 IMU samples.
+
 <div class="imu-table-toolbar">
   <div id="imu-row-count">Loading metadata...</div>
 </div>
@@ -69,7 +71,6 @@ Splits are deduplicated at the trajectory level (SHA-256 of raw IMU content); tr
         <th data-col="inferred_source">source</th>
         <th data-col="n_samples">n_samples</th>
         <th data-col="duration_s">duration_s</th>
-        <th data-col="sample_rate_hz">sample_rate_hz</th>
         <th data-col="file_size_bytes">file_size_bytes</th>
       </tr>
       <tr class="imu-filter-row" id="imu-filter-row"></tr>

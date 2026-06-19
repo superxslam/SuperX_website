@@ -288,6 +288,13 @@ body.imuchallenge-home .hero .button.is-info:not(:first-child) {
   margin-bottom: 0.9rem;
 }
 
+.imu-announcements-feed {
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 0.4rem;
+  margin-bottom: 1rem;
+}
+
 .imu-note {
   border-left: 4px solid #2a84bd;
   background: #edf7ff;

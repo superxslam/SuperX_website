@@ -10,6 +10,7 @@
                 {% else %}
                 <p class="title is-2">{{ page.title }}</p>
                 <p class="subtitle is-3">{{ page.subtitle }}</p>
+                {% if page.hero_subtitle2 %}<p class="subtitle" style="font-size:1rem; opacity:0.88; margin-top:-0.75rem; font-style:italic;">{{ page.hero_subtitle2 }}</p>{% endif %}
                 {% endif %}
                 <p class="subtitle is-3">
             {% endunless %}

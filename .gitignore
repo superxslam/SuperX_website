@@ -9,6 +9,8 @@
 *.log
 *.log.*
 
+iros_results/
+
 /.vscode/
 
 # node_modules/

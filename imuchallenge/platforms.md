@@ -31,7 +31,3 @@ This challenge is organized across multiple platforms to measure both in-domain 
   </a>
 </div>
 
-## Evaluation Perspective
-
-- Per-platform accuracy and robustness
-- Cross-platform transfer performance

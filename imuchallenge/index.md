@@ -9,13 +9,25 @@ hero_height: is-medium
 hero_image: /img/datasets/dataset_video_short.gif
 hero_link: /imuchallenge/setup/
 hero_link_text: GET STARTED
-hero_link2: /imuchallenge/data/
-hero_link_text2: DATASET
-hero_announcement_text: "Held in conjunction with the \"Beyond Exteroception: Interoceptive Perception for Resilient Robotics\" Workshop at IROS 2026"
-hero_announcement_link: /interoception/
-hero_announcement_link_text: VIEW WORKSHOP
+hero_link2: /imuchallenge/setup/
+hero_link_text2: REGISTER
+hero_subtitle2: "Held in conjunction with Beyond Exteroception: Interoceptive Perception for Resilient Robotics Workshop at IROS 2026"
 permalink: /imuchallenge/
 ---
+
+## Announcements
+
+<div class="imu-announcements-feed">
+  <div class="imu-card">
+    <strong>May 30, 2026:</strong> The official dataset release hub is set to <a href="/imuchallenge/data/"><code>/imuchallenge/data/</code></a>.
+  </div>
+  <div class="imu-card">
+    <strong>May 30, 2026:</strong> Platform pages (Car, Drone, Quadruped, Handheld) are published.
+  </div>
+  <div class="imu-card">
+    <strong>May 30, 2026:</strong> Initial IMU Odometry Challenge website structure is now live under the <code>/imuchallenge/</code> namespace.
+  </div>
+</div>
 
 ## What This Challenge Is
 
@@ -38,7 +50,21 @@ All official dataset packages, download links, and the live metadata explorer ar
 
 ## Challenge Goal
 
-Build IMU models that improve cross-platform performance and beat current state-of-the-art multi-platform performance under a common benchmark protocol, while surfacing research questions for the workshop discussion on interoceptive robot perception.
+Build IMU odometry models that generalize across robot platforms and beat current state-of-the-art performance under a shared benchmark protocol, surfacing research questions for the workshop discussion on interoceptive robot perception.
+
+### Problem Formulation
+
+**Input:** Raw 6-DOF IMU measurements — accelerometer (a_x, a_y, a_z) in m/s² and gyroscope (ω_x, ω_y, ω_z) in rad/s — sampled at **200 Hz**. Each input window spans **1 second (200 samples)**; models receive sequences of **10 consecutive windows (10 s total)**.
+
+**Output:** Per-window **3D body-frame velocity predictions v = (v_x, v_y, v_z)** in m/s. Positions are derived by the organizers via integration with ground-truth orientation.
+
+### Evaluation Metrics
+
+Submissions are ranked on held-out test trajectories across all platforms using:
+
+<div class="imu-card"><strong>Velocity RMSE</strong> &nbsp;<em>(primary ranking metric)</em><br>Macro-averaged velocity RMSE — mean of per-platform RMSEs — so platform size imbalance cannot be gamed.</div>
+
+<div class="imu-card"><strong>ATE — Absolute Trajectory Error</strong> &nbsp;<em>(secondary metric)</em><br>Position RMSE over 5 m drift-corrected segments, computed by the organizers by integrating predicted velocities with ground-truth orientation.</div>
 
 ## Benchmark Structure
 
@@ -51,7 +77,6 @@ Build IMU models that improve cross-platform performance and beat current state-
 - [Setup](/imuchallenge/setup/)
 - [Platforms](/imuchallenge/platforms/)
 - [Data](/imuchallenge/data/)
-- [Announcements](/imuchallenge/announcements/)
 - [About](/imuchallenge/about/)
 
 ## BibTeX

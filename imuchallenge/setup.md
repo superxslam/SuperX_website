@@ -12,7 +12,7 @@ permalink: /imuchallenge/setup/
 ## Quick Start
 
 <div class="imu-card">
-<strong>Step 1: Register your team.</strong> <a href="/imuchallenge/about/">Sign up on the About page.</a>
+<strong>Step 1: Register your team.</strong> <a href="https://www.kaggle.com" target="_blank" rel="noopener">Sign up on Kaggle.</a>
 </div>
 
 <div class="imu-card">
@@ -220,7 +220,7 @@ finetune:
 </div>
 
 <div class="imu-card">
-<strong>Step 6: Improve and submit.</strong> Experiment with your own methods to push performance on the leaderboard.
+<strong>Step 6: Improve and <a href="https://www.kaggle.com" target="_blank" rel="noopener">submit</a>.</strong> Experiment with your own methods to push performance on the leaderboard.
 </div>
 
 ## Recommended Workflow
@@ -234,5 +234,18 @@ finetune:
 
 - Linux or macOS development environment
 - Python + PyTorch toolchain
-- GPU recommended for training; CPU acceptable for evaluation tooling
+- GPU required for both training and evaluation
+
+## Organizer Reference System
+
+Results reported by the organizers were produced on the following hardware:
+
+| Component | Specification |
+|---|---|
+| CPU | AMD Ryzen 9 7950X (16-core / 32-thread) |
+| Memory | 128 GB DDR5 |
+| GPU | NVIDIA RTX A6000 (48 GB VRAM) |
+| Driver | 535.183.01 |
+| CUDA | 12.1 |
+| PyTorch | 2.5.1+cu121 |
 

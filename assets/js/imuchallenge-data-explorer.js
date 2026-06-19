@@ -9,7 +9,7 @@
 
   const columns = [
     'platform', 'split', 'traj_id', 'npz_relpath', 'inferred_source',
-    'n_samples', 'duration_s', 'sample_rate_hz',
+    'n_samples', 'duration_s',
     'file_size_bytes'
   ];
 
@@ -18,7 +18,6 @@
     'npz_relpath',
     'n_samples',
     'duration_s',
-    'sample_rate_hz',
     'file_size_bytes'
   ]);
 
