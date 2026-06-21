@@ -8,6 +8,13 @@
 
   function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));}
 
+  const SPECIALIST_MODEL_URL={
+    car:'https://huggingface.co/Tartan-IMU/IROS_workshop_car_specialist',
+    dog:'https://huggingface.co/Tartan-IMU/IROS_workshop_quadruped_specialist',
+    drone:'https://huggingface.co/Tartan-IMU/IROS_workshop_drone_specialist',
+    human:'https://huggingface.co/Tartan-IMU/IROS_workshop_human_specialist'
+  };
+
   fetch('/assets/data/imuchallenge_metadata.json')
     .then(r=>r.json())
     .then(rows=>{
@@ -18,6 +25,13 @@
         return;
       }
       const thumb=item.thumbnail || '/img/place_holder_01.png';
+      const platformLabel=item.platform==='dog'?'Quadruped':(item.platform==='human'?'Handheld':(item.platform.charAt(0).toUpperCase()+item.platform.slice(1)));
+      const modelUrl=SPECIALIST_MODEL_URL[item.platform];
+      const modelNote=modelUrl
+        ?`<div class="imu-note" style="margin:0.5rem 0 1rem 0;">
+            Prediction shown is from our <strong>${esc(platformLabel)} TartanIMU specialist</strong> reference model — <a href="${modelUrl}" target="_blank" rel="noopener">view on Hugging Face &rarr;</a>
+          </div>`
+        :'';
       const trainNote=item.split==='train'
         ?`<div style="margin:0.5rem 0 1rem 0;padding:0.6rem 0.9rem;border-left:3px solid #f59e0b;background:#fefce8;color:#92400e;font-size:0.85rem;border-radius:0 6px 6px 0;">
             <strong>Note:</strong> This is a <strong>training trajectory</strong> — the reference model was trained on this data. Performance here is <em>not</em> indicative of generalisation to unseen sequences. See the <strong>val</strong> split for held-out results.
@@ -26,6 +40,7 @@
       root.innerHTML=`
         <h2 style="margin-top:0;">${esc(item.traj_id)}</h2>
         <img src="${esc(thumb)}" alt="trajectory thumbnail" style="width:100%;max-width:980px;border-radius:12px;border:1px solid #d8ebf9;margin:0.5rem 0 1rem 0;"/>
+        ${modelNote}
         ${trainNote}
         <div class="imu-metrics" style="margin-top:0;">
           <div class="imu-metric"><span class="value">${esc(item.platform==='dog'?'quadruped':(item.platform==='human'?'handheld':item.platform))}</span><span class="label">Platform</span></div>

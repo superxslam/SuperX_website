@@ -9,7 +9,7 @@ hero_height: is-medium
 hero_image: /img/datasets/dataset_video_short.gif
 hero_link: /imuchallenge/setup/
 hero_link_text: GET STARTED
-hero_link2: /imuchallenge/setup/
+hero_link2: https://forms.gle/oRr4rCNxqTP1U6uS8
 hero_link_text2: REGISTER
 hero_subtitle2: "Held in conjunction with Beyond Exteroception: Interoceptive Perception for Resilient Robotics Workshop at IROS 2026"
 permalink: /imuchallenge/
@@ -46,6 +46,12 @@ This challenge is held in conjunction with the [IROS'26 Workshop: "Beyond Extero
 
 <div class="imu-note">
 All official dataset packages, download links, and the live metadata explorer are published on <a href="/imuchallenge/data/"><strong>/imuchallenge/data</strong></a>.
+</div>
+
+## Try the Live Demo
+
+<div class="imu-card">
+Run our reference TartanIMU specialist models on your own IMU sequences directly in the browser — no setup required. <a href="https://huggingface.co/spaces/Tartan-IMU/imu_odometry_challenge_demo" target="_blank" rel="noopener"><strong>Launch the Hugging Face Space demo &rarr;</strong></a>
 </div>
 
 ## Challenge Goal

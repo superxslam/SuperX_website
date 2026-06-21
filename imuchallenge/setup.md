@@ -12,7 +12,7 @@ permalink: /imuchallenge/setup/
 ## Quick Start
 
 <div class="imu-card">
-<strong>Step 1: Register your team.</strong> <a href="https://www.kaggle.com" target="_blank" rel="noopener">Sign up on Kaggle.</a>
+<strong>Step 1: Register your team.</strong> <a href="https://forms.gle/oRr4rCNxqTP1U6uS8" target="_blank" rel="noopener">Fill out the registration form.</a> Then <a href="https://www.kaggle.com" target="_blank" rel="noopener">sign up on Kaggle.</a>
 </div>
 
 <div class="imu-card">
@@ -25,6 +25,16 @@ permalink: /imuchallenge/setup/
 ```bash
 git clone https://github.com/superxslam/TartanIMU
 ```
+</div>
+
+<div class="imu-card">
+<strong>Reference models.</strong> We provide per-platform "specialist" checkpoints trained internally as a benchmarking reference, so you can gauge what good performance looks like before submitting. You can also try them interactively in the <a href="https://huggingface.co/spaces/Tartan-IMU/imu_odometry_challenge_demo" target="_blank" rel="noopener">live demo</a>.
+<ul>
+  <li><a href="https://huggingface.co/Tartan-IMU/IROS_workshop_car_specialist" target="_blank" rel="noopener">Car specialist</a></li>
+  <li><a href="https://huggingface.co/Tartan-IMU/IROS_workshop_quadruped_specialist" target="_blank" rel="noopener">Quadruped specialist</a></li>
+  <li><a href="https://huggingface.co/Tartan-IMU/IROS_workshop_drone_specialist" target="_blank" rel="noopener">Drone specialist</a></li>
+  <li><a href="https://huggingface.co/Tartan-IMU/IROS_workshop_human_specialist" target="_blank" rel="noopener">Handheld specialist</a></li>
+</ul>
 </div>
 
 <div class="imu-card">
